@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DL Training Videos</title>
+  <style>
+    :root {
+      --navy: #03606f;
+      --teal: #00867d;
+      --green: #95cc6b;
+      --light-green: #dbecc6;
+      --light-blue: #b3dde9;
+      --mid-blue: #65c4da;
+      --grey: #535458;
+      --light-grey: #f4f7f8;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Century Gothic", sans-serif;
+      background: var(--light-grey);
+      color: var(--grey);
+    }
+
+    .page {
+      min-height: 100vh;
+      background: var(--white);
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      padding: 36px 7% 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 24px;
+    }
+
+    .title-area h1 {
+      font-size: clamp(2rem, 5vw, 4rem);
+      color: var(--navy);
+      letter-spacing: -1px;
+      margin-bottom: 14px;
+    }
+
+    .title-line {
+      width: 80px;
+      height: 5px;
+      background: var(--green);
+      border-radius: 999px;
+      margin-bottom: 18px;
+    }
+
+    .title-area p {
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      color: var(--grey);
+    }
+
+    .logo-placeholder {
+      width: 170px;
+      min-width: 130px;
+      height: 90px;
+      border: 2px dashed var(--light-blue);
+      border-radius: 18px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: var(--navy);
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--white), var(--light-green));
+    }
+.logo-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+    main {
+      flex: 1;
+      padding: 0 7% 40px;
+    }
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+  margin: 10px auto 0;
+  max-width: 1000px;
+}
+
+    .video-card {
+      background: var(--white);
+      border: 1px solid rgba(3, 96, 111, 0.14);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 6px 18px rgba(3, 96, 111, 0.12);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .video-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 24px rgba(3, 96, 111, 0.18);
+    }
+
+    .video-placeholder {
+      aspect-ratio: 16 / 9;
+      background:
+        radial-gradient(circle at center, rgba(3, 96, 111, 0.9) 0 15%, transparent 16%),
+        linear-gradient(135deg, rgba(179, 221, 233, 0.9), rgba(219, 236, 198, 0.6));
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .play-button {
+      width: 74px;
+      height: 74px;
+      border-radius: 50%;
+      background: var(--navy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 5px 14px rgba(3, 96, 111, 0.3);
+    }
+
+    .play-button::before {
+      content: "";
+      width: 0;
+      height: 0;
+      border-top: 16px solid transparent;
+      border-bottom: 16px solid transparent;
+      border-left: 24px solid var(--white);
+      margin-left: 6px;
+    }
+
+    .video-title {
+      padding: 18px 20px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    .banner {
+      position: relative;
+      height: 190px;
+      overflow: hidden;
+      background: linear-gradient(120deg, var(--navy), var(--teal));
+    }
+
+.banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+    .banner::after {
+      content: "";
+      position: absolute;
+      left: -5%;
+      right: -5%;
+      bottom: -70px;
+      height: 130px;
+      background: var(--navy);
+      border-top: 16px solid var(--green);
+      border-radius: 50% 50% 0 0;
+    }
+
+    @media (max-width: 900px) {
+      .video-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 620px) {
+      header {
+        flex-direction: column-reverse;
+        padding-top: 24px;
+      }
+
+      .logo-placeholder {
+        align-self: flex-end;
+        width: 135px;
+        height: 70px;
+      }
+
+      .video-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .banner {
+        height: 150px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="title-area">
+        <h1>Text Voice Messaging</h1>
+        <div class="title-line"></div>
+      </div>
+
+      <div class="logo-placeholder">
+  <img src="Navitas_SkilledFutures_Logo" alt="Navitas Skilled Futures Logo" class="logo-img">
+</div>
+    </header>
+
+    <main>
+      <section class="video-grid" aria-label="Training videos">
+        <article class="video-card">
+          <div class="video-placeholder">
+  <iframe 
+    src="https://youtu.be/il35Sc1r-5o?si=NMlcUdERXcszi3PJ"
+    title="0102 Can I ask you about something on my phone?"
+    frameborder="0"
+    allowfullscreen>
+  </iframe>
+</div>
+          <div class="video-title">0102 Can I ask you about something on my phone?</div>
+        </article>
+
+        <article class="video-card">
+         <div class="video-placeholder">
+  <iframe 
+    src="https://youtu.be/pmbItLDhCIw?si=yCabKECu_sSEU3fC"
+    title="0105 Message apps"
+    frameborder="0"
+    allowfullscreen>
+  </iframe>
+</div>
+          <div class="video-title">0105 Message apps</div>
+        </article>
+      </section>
+    </main>
+
+    <footer class="banner">
+     <div class="logo-placeholder">
+  <img src="banner" alt="banner image" class="banner-img">
+</div>
+    </footer>
+  </div>
+</body>
+</html>
